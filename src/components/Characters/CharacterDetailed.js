@@ -1,36 +1,31 @@
-import React, {Fragment, useEffect, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {fetchData} from "../../store/actionCreators";
+import React, {useEffect} from "react";
+import {useSelector} from "react-redux";
 
-const CharacterDetailed = ({path}) => {
+const CharacterDetailed = ({match}) => {
 	const list = useSelector( state => state.results);
-	const dispatch = useDispatch();
 
+	const id = match.params.id;
 
-	useEffect(() => {
-		dispatch(fetchData(path));
-	}, []);
+	console.log(list);
 
-	console.log(useState())
+	console.log(id);
+	const {name, gender, image, species, status, type, url} = list.find( (elem) =>  elem.id == id)
 
 	return (
-		<Fragment>
-		{	list && Object.keys(list).length ? (<div className={"Character"}>
+		<div className={"Character"}>
 			<div className={"Image__Wrap"}>
-				<img className={"Image"} src={list.image} alt={list.url}/>
+					<img className={"Image"} src={image} alt={url}/>
 			</div>
 			<div className={"Description"}>
-				<p className={"TextLine"}>{`Name : ${list.name}`}</p>
-				<p className={"TextLine"}>{`Gender: ${list.gender}`}</p>
-				<p className={"TextLine"}>{`Status : ${list.status}`}</p>
-				{list.type ?
-					<p className={"TextLine"}>{`Type : ${list.type}`}</p>
+				<p className={"TextLine"}>{`Name : ${name}`}</p>
+				<p className={"TextLine"}>{`Gender: ${gender}`}</p>
+				<p className={"TextLine"}>{`Status : ${status}`}</p>
+				{type ?
+					<p className={"TextLine"}>{`Type : ${type}`}</p>
 					: null}
-				<p className={"TextLine"}>{`Species : ${list.species}`}</p>
+				<p className={"TextLine"}>{`Species : ${species}`}</p>
 			</div>
-		</div>) : null}
-
-		</Fragment>
+		</div>
 	);
 }
 

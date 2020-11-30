@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const Character = ({path, name, gender, image, species, status, type, url, match}) => {
+const Character = ({path, name, gender, image, species, status, type, url}) => {
 	return (
 		<div className={"Character"}>
 			<div className={"Image__Wrap"}>

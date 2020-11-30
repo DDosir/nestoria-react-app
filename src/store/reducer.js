@@ -8,7 +8,7 @@ const initState = {
 export const reducer = (state = initState, action) => {
 	switch (action.type){
 		case ADD_TO_LIST:
-			return {info: action.payload.info, results: action.payload.results};
+			return {info: action.payload.info, results: [...action.payload.results]};
 		default:
 			return state;
 	}

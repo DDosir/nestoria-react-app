@@ -1,5 +1,5 @@
 const urls = {
-	character: '/character',
+	character: '/character/',
 	location: '/location',
 	episode: '/episode',
 }

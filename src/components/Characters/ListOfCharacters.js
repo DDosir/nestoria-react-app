@@ -2,20 +2,19 @@ import React, {useEffect} from "react";
 import Character from "../Characters/Character";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchData} from "../../store/actionCreators";
-import {Switch,Route} from "react-router-dom";
+import urls from "../../utils/urls";
 
-const ListOfCharacters = ({url}) => {
+
+const ListOfCharacters = ({path}) => {
 	const list = useSelector( state => state.results);
 	const dispatch = useDispatch();
-	const path = 'character/';
 
 	useEffect(() => {
-		dispatch(fetchData(url));
+		dispatch(fetchData(urls.character));
 	}, []);
 
+
 	return (
-		// <Switch>
-		// 	<Route exact path={'/character'}
 				<div className={"List"}>
 					{list.map(({name, created, gender, id, image, species, status, type, url}) =>
 						<Character name={name}
@@ -31,8 +30,6 @@ const ListOfCharacters = ({url}) => {
 						/>
 					)}
 				</div>
-		// 		{/*<Route path={'/character/:id'}/>*/}
-		// {/*</Switch>*/}
 	)
 }
 
