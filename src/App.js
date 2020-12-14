@@ -1,5 +1,6 @@
 import React from 'react';
 import {Switch, Route} from "react-router-dom";
+import {BrowserRouter as Router} from 'react-router-dom'
 import {Header} from "./components/Header";
 import {Footer} from "./components/Footer";
 import './App.css';
@@ -11,7 +12,7 @@ import CharacterDetailed from "./components/Characters/CharacterDetailed";
 
 const App = () => {
   return (
-    <>
+    <Router>
       <Header/>
 
       <Switch>
@@ -27,7 +28,7 @@ const App = () => {
         )}/>
       </Switch>
       <Footer/>
-    </>
+    </Router>
   );
 };
 

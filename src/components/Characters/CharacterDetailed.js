@@ -6,10 +6,7 @@ const CharacterDetailed = ({match}) => {
 
 	const id = match.params.id;
 
-	console.log(list);
-
-	console.log(id);
-	const {name, gender, image, species, status, type, url} = list.find( (elem) =>  elem.id == id)
+	const {name, gender, image, species, status, type, url} = list.find( (elem) =>  elem.id === +id)
 
 	return (
 		<div className={"Character"}>
@@ -20,10 +17,10 @@ const CharacterDetailed = ({match}) => {
 				<p className={"TextLine"}>{`Name : ${name}`}</p>
 				<p className={"TextLine"}>{`Gender: ${gender}`}</p>
 				<p className={"TextLine"}>{`Status : ${status}`}</p>
+				<p className={"TextLine"}>{`Species : ${species}`}</p>
 				{type ?
 					<p className={"TextLine"}>{`Type : ${type}`}</p>
 					: null}
-				<p className={"TextLine"}>{`Species : ${species}`}</p>
 			</div>
 		</div>
 	);
