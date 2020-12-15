@@ -9,12 +9,13 @@ import ListOfEpisodes from "./components/Episodes/ListOfEpisodes";
 import urls from "./utils/urls";
 import ListOfCharacters from "./components/Characters/ListOfCharacters";
 import CharacterDetailed from "./components/Characters/CharacterDetailed";
+import SearchForm from "./components/SearchForm/SearchForm";
 
 const App = () => {
   return (
     <Router>
       <Header/>
-
+      <SearchForm/>
       <Switch>
         <Route exact path={urls.character}>
           <ListOfCharacters path={urls.character}/>

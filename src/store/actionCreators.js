@@ -11,7 +11,7 @@ export const requestFromUrl = (url) => {
 			axios.request(options)
 				.then((response) => dispatch(addToList((response.data))))
 				.catch((error) => console.error(error));
-			console.log('state ', getState())
+			console.log('state ', getState());
 		}
 	}
 }

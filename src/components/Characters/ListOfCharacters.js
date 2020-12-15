@@ -6,7 +6,7 @@ import urls from "../../utils/urls";
 
 
 const ListOfCharacters = ({path}) => {
-	const list = useSelector( state => state.results);
+	const list = useSelector( state => state.reducer.results);
 	const dispatch = useDispatch();
 
 	useEffect(() => {

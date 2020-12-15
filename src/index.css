@@ -96,3 +96,19 @@ code {
 .NavBar__Link{
   text-decoration: none;
 }
+
+.search {
+  display: flex;
+  align-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-bottom: 7px solid #0267d4;
+}
+
+.search__child {
+  width: 17%;
+  max-width: 260px;
+  margin: 5px 5px;
+  padding: 5px;
+}

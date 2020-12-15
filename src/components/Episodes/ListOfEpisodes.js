@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchData} from "../../store/actionCreators";
 
 const ListOfEpisodes = () => {
-	const list = useSelector( state => state.results);
+	const list = useSelector( state => state.reducer.results);
 	const dispatch = useDispatch();
 	const path = 'episode/';
 
